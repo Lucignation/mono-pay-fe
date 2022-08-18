@@ -1,0 +1,33 @@
+.singleInput input {
+  box-sizing: border-box;
+
+  //   position: absolute;
+  height: 50px;
+  //   width: 325px;
+  width: 100%;
+  border-radius: 5px;
+
+  /* Colors/Neutral/White */
+  background: #ffffff;
+  border: 1px solid #101010;
+  border-radius: 5px;
+
+  margin-bottom: 11.56px;
+
+  padding: 21.72px 16.36px;
+  color: #333333;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+// @media (max-width: 912px) {
+//   .singleInput input {
+//     width: 80%;
+//   }
+// }
+
+// @media (max-width: 540px) {
+//   .singleInput input {
+//     width: 100%;
+//   }
+// }

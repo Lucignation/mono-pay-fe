@@ -69,7 +69,7 @@ const Login: FC<props> = () => {
         <div className={styles.login_mid_info}>
           <div className={styles.remember_me}>
             <input type='checkbox' name='rememberMe' />
-            <span className={styles.remember_text}>Remember me</span>
+            <p className={styles.remember_text}>Remember me</p>
           </div>
 
           <span className={styles.login_forgot_password}>

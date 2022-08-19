@@ -2,6 +2,8 @@
   display: grid;
   grid-template-columns: 20% 50% 30%;
   min-height: 100vh;
+  background-color: #fff;
+  color: #000;
 }
 
 .dashboard_main_content {
@@ -17,6 +19,12 @@
   text-align: center;
 }
 
+.horizontal_line {
+  border-bottom: 0.537255px solid #dedede;
+  margin-bottom: 26.97px;
+  margin-top: 10.95px;
+}
+
 //transaction list style
 .transactions_heading {
   display: flex;
@@ -27,12 +35,17 @@
 .transactions_item {
   display: grid;
   grid-template-columns: 15% 70% 15%;
+  padding-bottom: 38px;
+}
+
+.transaction_detail {
+  margin-top: -30px;
 }
 
 .transaction_time_date {
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 17px;
   letter-spacing: 0.537255px;
 
@@ -40,6 +53,7 @@
 
   mix-blend-mode: normal;
   opacity: 0.5;
+  margin-top: -18px;
 }
 
 .transaction_amount {
@@ -52,6 +66,7 @@
   letter-spacing: 0.368403px;
 
   color: #273240;
+  margin-top: -7px;
 }
 
 .transaction_title {
@@ -64,6 +79,23 @@
   letter-spacing: 0.368403px;
 
   color: #273240;
+}
+
+.dashboard_view_all_link {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.dashboard_view_all_link a {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13.5px;
+  line-height: 14px;
+  letter-spacing: 0.604412px;
+
+  color: #404852;
+  text-decoration: none;
+  padding-top: 33.75px;
 }
 
 //avatar

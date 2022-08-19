@@ -1,0 +1,32 @@
+.money_meter_main {
+  padding-bottom: 26.71px;
+}
+
+.money_meter_sub_heading {
+  display: flex;
+  justify-content: space-between;
+}
+.money_title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18.7993px;
+  line-height: 35px;
+  /* identical to box height, or 185% */
+
+  letter-spacing: 0.671402px;
+
+  color: #273240;
+}
+
+.money_amount {
+  font-style: bold;
+  font-weight: 600;
+  font-size: 18.7993px;
+  line-height: 35px;
+  /* identical to box height, or 185% */
+
+  text-align: right;
+  letter-spacing: 0.671402px;
+
+  color: #273240;
+}

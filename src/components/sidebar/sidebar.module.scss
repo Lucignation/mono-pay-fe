@@ -1,4 +1,47 @@
 .sidebar_main {
   background-color: #000;
   color: #fff;
+  padding: 53px 69px;
+  // min-height: 100%;
+}
+
+.sidebar_list {
+  padding-top: 49.13px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar_item {
+  padding-bottom: 30px;
+}
+
+.sidebar_item a {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 35px;
+  /* identical to box height, or 159% */
+
+  color: #ffffff;
+
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+.sidebar_item_active {
+  padding-bottom: 30px;
+}
+
+.sidebar_item_active a {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 35px;
+  /* identical to box height, or 159% */
+
+  color: #ffffff;
+
+  mix-blend-mode: normal;
+  text-decoration: none;
 }

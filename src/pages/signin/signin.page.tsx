@@ -1,6 +1,7 @@
 import { FC, useState, useEffect } from 'react';
 import Input from '../../components/input/input.component';
 import Button from '../../components/button/button.component';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 //styles
@@ -11,6 +12,7 @@ import Logo from '../../assets/images/mono.svg';
 
 type props = {};
 const Login: FC<props> = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
@@ -39,6 +41,10 @@ const Login: FC<props> = () => {
     );
 
     console.log(res);
+
+    if (res.status === 200) {
+      navigate('/dashboard');
+    }
     // console.log(signupObj);
   };
   return (

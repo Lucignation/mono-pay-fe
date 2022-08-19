@@ -89,8 +89,9 @@
 }
 
 .divide_input {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 48% 48%;
+  grid-gap: 4%;
 }
 
 //media query

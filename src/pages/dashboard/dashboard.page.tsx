@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 import Sidebar from '../../components/sidebar/sidebar.component';
 import BalanceCard from '../../components/balance-card/balance-card.component';
@@ -18,15 +18,33 @@ import FoodieIcon from '../../assets/images/foodie-icon.svg';
 import HouseIcon from '../../assets/images/house-icon.svg';
 import { Link } from 'react-router-dom';
 
-type props = {
-  btnText?: string;
-  btnType?: string;
-};
+type props = {};
 
-const Dashboard: FC<props> = ({ btnText, btnType }) => {
+const Dashboard: FC<props> = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const handleHamburger = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <div className={styles.dashboard_main}>
-      <Sidebar />
+      <div className={styles.dashboard_sidebar}>
+        <Sidebar />
+      </div>
+
+      <div
+        className={styles.dashboard_sidebar_mobile}
+        onClick={handleHamburger}
+      >
+        {isOpen ? (
+          <div>
+            Close <Sidebar />
+          </div>
+        ) : (
+          <div>open</div>
+        )}
+      </div>
+
       <div className={styles.dashboard_main_content}>
         <div className={styles.dashboard_welcome_corner}>
           <div className={styles.user_greetings}>
@@ -112,7 +130,7 @@ const Dashboard: FC<props> = ({ btnText, btnType }) => {
       <div className={styles.dashboard_main_right_content}>
         <BalanceCard />
 
-        <MongoGo  />
+        <MongoGo />
       </div>
     </div>
   );

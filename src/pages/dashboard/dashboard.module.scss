@@ -116,3 +116,33 @@
   padding-left: 13px;
   margin-top: 6px;
 }
+
+.dashboard_sidebar {
+  display: block;
+}
+
+.dashboard_sidebar_mobile {
+  display: none;
+}
+
+@media (max-width: 540px) {
+  .dashboard_main {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+  .dashboard_sidebar {
+    display: none;
+  }
+  .dashboard_sidebar_mobile {
+    display: block;
+
+    position: absolute;
+    z-index: 1000;
+  }
+
+  .dashboard_main_content {
+    padding-left: 13.94px;
+    padding-right: 62.94px;
+    padding-top: 57px;
+  }
+}

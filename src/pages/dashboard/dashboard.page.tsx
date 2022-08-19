@@ -4,6 +4,9 @@ import Sidebar from '../../components/sidebar/sidebar.component';
 import BalanceCard from '../../components/balance-card/balance-card.component';
 import MongoGo from '../../components/money-go/money-go.component';
 
+import { useSelector, useDispatch } from 'react-redux';
+import type { RootState } from '../../store/store';
+
 import styles from './dashboard.module.scss';
 
 //import icons
@@ -21,6 +24,9 @@ import { Link } from 'react-router-dom';
 type props = {};
 
 const Dashboard: FC<props> = () => {
+  const userCred = useSelector((state: RootState) => state.user);
+
+  console.log(userCred.user);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleHamburger = () => {
@@ -51,7 +57,7 @@ const Dashboard: FC<props> = () => {
             <div className={styles.avatar}>
               <img src={Avatar} alt='user avatar' />
             </div>
-            <p>Good Morning, Olu</p>
+            <p>Good Morning, {userCred.user.firstName}</p>
           </div>
           <div className={styles.filter_date}>
             Today <img src={Calendar} alt='filter date' />{' '}

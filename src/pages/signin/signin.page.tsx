@@ -6,6 +6,8 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useContext } from 'react';
 import { LoginContext } from '../../App';
+import { useSelector, useDispatch } from 'react-redux';
+import { setUser } from '../../store/userReducer';
 
 //styles
 import styles from '../../assets/styles/layout.module.scss';
@@ -16,6 +18,7 @@ import Logo from '../../assets/images/mono.svg';
 type props = {};
 const Login: FC<props> = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { loggedIn, setLoggedIn } = useContext(LoginContext);
 
   const [email, setEmail] = useState<string>('');
@@ -54,6 +57,7 @@ const Login: FC<props> = () => {
     );
 
     console.log(res);
+    dispatch(setUser(res.data.msg));
 
     if (res.status === 200) {
       navigate('/dashboard');

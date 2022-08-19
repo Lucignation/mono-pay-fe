@@ -2,6 +2,7 @@ import { useRoutes, BrowserRouter as Router } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import { createContext, useState } from 'react';
+import { Provider } from 'react-redux';
 
 import Signin from './pages/signin/signin.page';
 import Signup from './pages/signup/signup.page';

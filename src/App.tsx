@@ -1,10 +1,18 @@
 import { useRoutes, BrowserRouter as Router } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+import { createContext, useState } from 'react';
 
 import Signin from './pages/signin/signin.page';
 import Signup from './pages/signup/signup.page';
 import Dashboard from './pages/dashboard/dashboard.page';
 
 import './App.scss';
+
+export const LoginContext = createContext({
+  loggedIn: false,
+  setLoggedIn: (loggedIn: false) => {},
+});
 
 const App = () => {
   let routes = useRoutes([
@@ -16,13 +24,15 @@ const App = () => {
 };
 
 const AppWrapper = () => {
+  const [loggedIn, setLoggedIn] = useState<boolean>(false);
   return (
-    <div>
+    <LoginContext.Provider value={{ loggedIn, setLoggedIn }}>
       <Router>
+        <ToastContainer />
         {/* <Navigator /> */}
         <App />
       </Router>
-    </div>
+    </LoginContext.Provider>
   );
 };
 

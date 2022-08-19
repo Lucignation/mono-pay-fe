@@ -1,6 +1,7 @@
 import { FC, useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import Input from '../../components/input/input.component';
 import Button from '../../components/button/button.component';
@@ -32,7 +33,23 @@ const Signup: FC<props> = () => {
     e.preventDefault();
 
     if (!firstName || !lastName || !email || !password) {
-      return setErrors("AgentId/Password can't be empty.");
+      const notify = () =>
+        toast.error('All fields are required', {
+          theme: 'colored',
+          hideProgressBar: true,
+          position: 'top-center',
+        });
+      notify();
+    }
+
+    if (password.length < 6) {
+      const errorNotify = () =>
+        toast.error('Password must be more than 6 characters', {
+          theme: 'colored',
+          hideProgressBar: true,
+          position: 'top-center',
+        });
+      errorNotify();
     }
     const signupObj = {
       firstName,

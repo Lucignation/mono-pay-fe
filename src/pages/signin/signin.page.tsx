@@ -3,6 +3,9 @@ import Input from '../../components/input/input.component';
 import Button from '../../components/button/button.component';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { toast } from 'react-toastify';
+import { useContext } from 'react';
+import { LoginContext } from '../../App';
 
 //styles
 import styles from '../../assets/styles/layout.module.scss';
@@ -13,22 +16,32 @@ import Logo from '../../assets/images/mono.svg';
 type props = {};
 const Login: FC<props> = () => {
   const navigate = useNavigate();
+  const { loggedIn, setLoggedIn } = useContext(LoginContext);
+
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-
-  const [error, setErrors] = useState<string>('');
-
-  useEffect(() => {
-    setTimeout(() => {
-      setErrors('');
-    }, 2000);
-  }, [error]);
 
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
     if (!email && !password) {
-      return setErrors("AgentId/Password can't be empty.");
+      const notify = () =>
+        toast.error("Email/Password can't be empty.", {
+          theme: 'colored',
+          hideProgressBar: true,
+          position: 'top-center',
+        });
+      notify();
+    }
+
+    if (password.length < 6) {
+      const errorNotify = () =>
+        toast.error('kindly check the password', {
+          theme: 'colored',
+          hideProgressBar: true,
+          position: 'top-center',
+        });
+      errorNotify();
     }
     const signupObj = {
       email,
@@ -91,7 +104,6 @@ const Login: FC<props> = () => {
             <a href='/signup'>Sign up</a>
           </span>
         </p>
-        {error ? <p className={styles.password_error}>{error}</p> : ''}
       </form>
     </div>
   );

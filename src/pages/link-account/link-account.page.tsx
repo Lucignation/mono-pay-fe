@@ -1,8 +1,7 @@
 import { FC, useState } from 'react';
 
 import Sidebar from '../../components/sidebar/sidebar.component';
-import BalanceCard from '../../components/balance-card/balance-card.component';
-import MongoGo from '../../components/money-go/money-go.component';
+import BankAccount from '../../components/bank-account/bank-account.component';
 
 import { CgMenuLeft } from 'react-icons/cg';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -20,12 +19,16 @@ const LinkAccountPage: FC<props> = () => {
   const userCred = useSelector((state: RootState) => state.user);
   const dispatch = useDispatch();
 
+  const [allowLink, setAllowLink] = useState<boolean>(false);
+
   console.log(userCred);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleHamburger = () => {
     setIsOpen(!isOpen);
   };
+
+  console.log(allowLink);
   return (
     <div className={styles.dashboard_main}>
       <div className={styles.dashboard_sidebar}>
@@ -49,7 +52,9 @@ const LinkAccountPage: FC<props> = () => {
           </div>
         )}
       </div>
-      <LinkAccount />
+      <LinkAccount setLink={setAllowLink} link={allowLink} />
+
+      {allowLink ? <BankAccount /> : ''}
     </div>
   );
 };

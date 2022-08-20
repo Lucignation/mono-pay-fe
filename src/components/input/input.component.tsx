@@ -8,7 +8,7 @@ import styles from './input.module.scss';
 type props = {
   formType?: string;
   placeholder?: string;
-  signups: string;
+  signups: any;
   setSignups: any;
   name: string;
 };
@@ -34,9 +34,8 @@ const Input: FC<props> = ({
     <div>
       {formType === 'password' ? (
         <div className={styles.singleInput}>
-
           <input
-            type={'password'}
+            type={formType}
             placeholder={placeholder}
             className={styles.input}
             name={name}
@@ -47,7 +46,7 @@ const Input: FC<props> = ({
       ) : (
         <div className={styles.singleInput}>
           <input
-            type='text'
+            type={formType}
             placeholder={placeholder}
             className={styles.input}
             name={name}

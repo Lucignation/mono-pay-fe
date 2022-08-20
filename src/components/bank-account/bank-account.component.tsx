@@ -56,7 +56,7 @@ const BankAccount: FC<props> = () => {
 
     const token = localStorage.getItem('token');
 
-    const config = {
+    const config: any = {
       headers: {
         'x-access-token': token,
       },

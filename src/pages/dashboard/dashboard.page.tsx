@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useState, useEffect } from 'react';
 
 import Sidebar from '../../components/sidebar/sidebar.component';
 import BalanceCard from '../../components/balance-card/balance-card.component';
@@ -20,6 +20,7 @@ import Threedots from '../../assets/images/threedots.svg';
 
 import { Link } from 'react-router-dom';
 import Transactions from '../../components/transaction-card/transaction-card.component';
+import axios from 'axios';
 
 type props = {};
 
@@ -29,6 +30,26 @@ const Dashboard: FC<props> = () => {
 
   console.log(userCred);
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    const fetch = async () => {
+      const token = localStorage.getItem('token');
+
+      const config: any = {
+        headers: {
+          'x-access-token': token,
+        },
+      };
+      const res = await axios.get(
+        'https://monopay-be.herokuapp.com/api/user/linked-accounts',
+        config
+      );
+
+      console.log(res); // the is where you get all the account linked to this user from the backend
+    };
+
+    fetch();
+  });
 
   const handleHamburger = () => {
     setIsOpen(!isOpen);

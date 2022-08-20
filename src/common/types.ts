@@ -21,3 +21,14 @@ export interface IUser {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface IBank {
+  _id: string;
+  accountName: string;
+  accountNumber: number;
+  bankName: string;
+  balance: number;
+  userId: string;
+  createdAt: string;
+  updatedAt: string;
+}

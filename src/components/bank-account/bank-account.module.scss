@@ -3,3 +3,12 @@
   margin-right: 230px !important;
   margin-left: -240px;
 }
+
+@media (max-width: 540px) {
+  .bank_container {
+    margin-top: 40px;
+    margin-right: 0px !important;
+    margin-left: 0px;
+    padding: inherit 5px;
+  }
+}

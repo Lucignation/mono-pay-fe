@@ -9,7 +9,6 @@ import { AiOutlineClose } from 'react-icons/ai';
 
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState } from '../../store/store';
-import { logOut } from '../../store/userReducer';
 
 import styles from './dashboard.module.scss';
 

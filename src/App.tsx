@@ -11,6 +11,9 @@ import { createContext, useState } from 'react';
 import Signin from './pages/signin/signin.page';
 import Signup from './pages/signup/signup.page';
 import Dashboard from './pages/dashboard/dashboard.page';
+import LinkAccountPage from './pages/link-account/link-account.page';
+import Settings from './pages/setting/settings.page';
+
 import { PrivateRoute } from './utils/Auth';
 
 import './App.scss';
@@ -28,6 +31,24 @@ const App = () => {
           element={
             <PrivateRoute>
               <Dashboard />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path='/accounts'
+          element={
+            <PrivateRoute>
+              <LinkAccountPage />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path='/settings'
+          element={
+            <PrivateRoute>
+              <Settings />
             </PrivateRoute>
           }
         />

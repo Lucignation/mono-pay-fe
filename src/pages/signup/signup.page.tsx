@@ -64,7 +64,7 @@ const Signup: FC<props> = () => {
     );
     console.log(res);
 
-    if (res.status === 200) {
+    if (res.status === 201) {
       navigate('/');
     }
   };

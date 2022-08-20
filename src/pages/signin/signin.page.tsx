@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useContext } from 'react';
-import { LoginContext } from '../../App';
 import { useSelector, useDispatch } from 'react-redux';
 import { setUser } from '../../store/userReducer';
 
@@ -19,7 +18,6 @@ type props = {};
 const Login: FC<props> = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { loggedIn, setLoggedIn } = useContext(LoginContext);
 
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -57,12 +55,11 @@ const Login: FC<props> = () => {
     );
 
     console.log(res);
-    dispatch(setUser(res.data.msg));
 
     if (res.status === 200) {
+      dispatch(setUser(res.data));
       navigate('/dashboard');
     }
-    // console.log(signupObj);
   };
   return (
     <div className={styles.login_container}>

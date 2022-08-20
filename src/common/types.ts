@@ -2,6 +2,12 @@ export type UserContextState = {
   user: {};
 };
 
+export interface IAccount {
+  user: IUser;
+  token: string;
+  msg: IUser;
+}
+
 export interface IState {
   user: IUser;
 }
@@ -14,5 +20,4 @@ export interface IUser {
   email: string;
   createdAt: string;
   updatedAt: string;
-  token: string;
 }

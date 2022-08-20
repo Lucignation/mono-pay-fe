@@ -70,3 +70,9 @@
   padding: 13px;
   color: red;
 }
+
+@media (max-width: 540px) {
+  .balance_main {
+    width: 280px;
+  }
+}

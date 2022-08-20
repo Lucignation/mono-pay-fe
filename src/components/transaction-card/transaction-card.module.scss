@@ -1,0 +1,115 @@
+//transaction list style
+.transactions_heading {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 56.69px;
+}
+
+.transactions_item {
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+  padding-bottom: 38px;
+}
+
+.transaction_detail {
+  margin-top: -30px;
+}
+
+.transaction_time_date {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.537255px;
+
+  color: #404852;
+
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  margin-top: -18px;
+}
+
+.transaction_amount {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17.1922px;
+  line-height: 19px;
+  /* identical to box height */
+  text-align: right;
+  letter-spacing: 0.368403px;
+
+  color: #273240;
+  margin-top: -7px;
+}
+
+.transaction_title {
+  top: calc(50% - 19px / 2 - 16.5px);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17.1922px;
+  line-height: 19px;
+  /* identical to box height */
+  letter-spacing: 0.368403px;
+
+  color: #273240;
+}
+
+.dashboard_view_all_link {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.dashboard_view_all_link a {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13.5px;
+  line-height: 14px;
+  letter-spacing: 0.604412px;
+
+  color: #404852;
+  text-decoration: none;
+  padding-top: 33.75px;
+}
+
+@media (max-width: 540px) {
+  .transactions_item {
+    display: grid;
+    grid-template-columns: 23% 60% 23%;
+    padding-bottom: 38px;
+  }
+
+  .transaction_title {
+    top: calc(20% - 19px / 2 - 16.5px);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.368403px;
+
+    color: #273240;
+  }
+
+  .transaction_amount {
+    font-size: 12.1922px;
+
+    color: #273240;
+    margin-top: 5px;
+  }
+
+  .transaction_time_date {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 17px;
+    letter-spacing: 0.537255px;
+
+    color: #404852;
+
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    margin-top: -18px;
+  }
+  .transaction_detail {
+    margin-top: -10px;
+  }
+}
